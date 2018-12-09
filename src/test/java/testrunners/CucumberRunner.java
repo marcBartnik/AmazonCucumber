@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/Features",                      //Specifies where the features files with test scenarios are stored
         glue = {"src/test/java/amazontests"},                           //Specifies where the tests are stored
-        format= {"pretty","html:reports/test-report"},
+        format = {"pretty","html:reports/test-report"},
         tags = "@smokeTest"
 )
 

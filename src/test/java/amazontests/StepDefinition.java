@@ -53,28 +53,32 @@ public class StepDefinition {
         customer.goToHomePage();
     }
 
-    @When("^Customer goes into \"([^\"]*)\"$")
+    @When("^Customer goes into \"Best sellers in Digital Cameras\"$")
     public void customerGoesInto() {
         customer.checkBestSellerCameras();
     }
 
     @When("^Customer opens details of fifth product$")
     public void customerOpensDetailsOfFifthProduct() {
+
         customer.openDetailsForProduct();
     }
 
     @When("^Customer adds eight pieces to the shopping cart$")
     public void customerAddsEightPiecesToTheShoppingCart() {
+
         customer.addProductToCart();
     }
 
     @When("^Customer checks that correct product was added$")
     public void customerChecksThatCorrectProductWasAdded() {
+
         customer.checkProductsInCart();
     }
 
     @Then("^Customer checks that subtotal price sum is correct$")
     public void customerChecksThatSubtotalPriceSumIsCorrect() {
+
         customer.checkSubtotalPrice();
     }
 }
