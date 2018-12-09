@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Customer {
 
     private WebDriver driver;
-    private final String chromeDriverPath = new File("bin/chromedriver.exe").getAbsolutePath();
+    private final String chromeDriverPath = new File("src/main/resources/chromedriver.exe").getAbsolutePath();
 
     private AmazonHomePage amazonHomePage;
     private AmazonBestSellersInDigitalCamerasLocators amazonBestSellersInDigitalCamerasLocators;
@@ -35,7 +35,7 @@ public class Customer {
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
 
-//        amazonHomePage = new AmazonHomePage(driver);
+        amazonHomePage = new AmazonHomePage(driver);
         amazonBestSellersInDigitalCameras = new AmazonBestSellersInDigitalCameras(driver);
         amazonBestSellersInDigitalCamerasLocators = new AmazonBestSellersInDigitalCamerasLocators(driver);
         amazonCartPage = new AmazonCartPage(driver);
@@ -54,7 +54,7 @@ public class Customer {
      * Opening Amazon home page and validation if it succeeded.
      */
     public void goToHomePage() {
-        amazonHomePage = new AmazonHomePage(driver);
+
         amazonHomePage.openHomePage();
     }
 
@@ -74,7 +74,6 @@ public class Customer {
     public void openDetailsForProduct() {
 
         amazonBestSellersInDigitalCameras.clickOn5thElement();
-//        amazonBestSellersInDigitalCameras.checkDetails();   //Nie ma czegos takie jak details
     }
 
     /**

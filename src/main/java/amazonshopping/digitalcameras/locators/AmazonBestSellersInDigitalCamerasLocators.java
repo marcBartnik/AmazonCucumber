@@ -12,7 +12,7 @@ public class AmazonBestSellersInDigitalCamerasLocators {
     private WebDriver driver;				    //driver which allows to navigate on a web page
     private By fifthElement;					//5th elemnt in search results
     private By productNameLocator;              //Name of selected product
-    private By selectQuantityLocator;		//field which represents requested quantity of product
+    private By selectQuantityLocator;		    //field which represents requested quantity of product
     private By addToCartButtonLocator;			//button which allows adding products to cart
 
     /**
@@ -23,7 +23,7 @@ public class AmazonBestSellersInDigitalCamerasLocators {
         this.driver = driver;
         fifthElement = new By.ByCssSelector("#result_5 > div > div.a-fixed-left-grid > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > div.a-row.a-spacing-none.scx-truncate-medium.sx-line-clamp-2 > a");
         productNameLocator = new By.ById("result_3");
-        selectQuantityLocator = new By.ByXPath("//*[@id=\"quantity\"]/option[8]");
+        selectQuantityLocator = new By.ByXPath("//*[@id=\"quantity\"]/option[1]");
         addToCartButtonLocator = new By.ByXPath("//*[@id=\"add-to-cart-button\"]");
     }
 

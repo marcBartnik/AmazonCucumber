@@ -18,7 +18,7 @@ public class AmazonCartPageLocators {
     public AmazonCartPageLocators(WebDriver driver){
 
         this.driver = driver;
-        cartButtonLocator = new By.ByXPath("//*[@id=\"attach-sidesheet-view-amazonshopping.data-button\"]/span/input");
+        cartButtonLocator = new By.ByXPath("//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input");
         productPriceLocator = new By.ByXPath("//*[@id=\"activeCartViewForm\"]/div[2]/div/div[4]/div/div[2]/p/span");
         subtotalPriceLocator = new By.ByClassName("//*[@id=\"gutterCartViewForm\"]/div[3]/div/div/div[1]/p/span/span[2]");
         productNameLocator = new By.ByXPath("//*[@id=\"activeCartViewForm\"]/div[2]/div/div[4]/div/div[1]/div/div/div[2]/ul/li[1]/span/a/span/text()");
@@ -27,7 +27,7 @@ public class AmazonCartPageLocators {
     /**
      * Finding 5th product on a page
      */
-    public WebElement cartButton() { return driver.findElement(cartButtonLocator); }  //Tu sie wywala
+    public WebElement cartButton() { return driver.findElement(cartButtonLocator); }
 
     /**
      * Finding quantity button

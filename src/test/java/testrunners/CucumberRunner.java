@@ -10,10 +10,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/Features",                      //Specifies where the features files with test scenarios are stored
-        glue = {"src/test/java/amazontests"},                           //Specifies where the tests are stored
-        format = {"pretty","html:reports/test-report"},
-        tags = "@smokeTest"
+        features = "src/Features",                                      //Specifies where the features files with test scenarios are stored
+        glue = {"amazontests"},                                         //Specifies where the tests are stored
+        format = {"pretty","html:reports/test-report"},                 //Specifies where and how test reports will be created
+        tags = "@smokeTest"                                             //Annotation for localization of Scenario
 )
 
-public class CucumberRunner {}
+public class CucumberRunner { }

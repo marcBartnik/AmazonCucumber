@@ -12,7 +12,6 @@ public class AmazonHomePageLocators {
 
     private WebDriver driver;					//driver which allows navigation on web page
     private By searchInputFieldLocator;			//field where customer can type requested item
-    private By searchButtonLocator;				//button which runs searching for particular item
 
     /**
      * Web element representatives on a page.
@@ -22,17 +21,12 @@ public class AmazonHomePageLocators {
 
         this.driver = driver;
         searchInputFieldLocator = new By.ById("twotabsearchtextbox");
-        searchButtonLocator = new By.ByCssSelector("nav-search-submit nav-sprite");
     }
 
     /**
      * Reaching search field.
      */
-    public WebElement searchInputField() { return  driver.findElement(searchInputFieldLocator); }
+    public WebElement searchInputField() {
 
-    /**
-     * Reaching search button.
-     */
-    public WebElement searchButton() { return driver.findElement(searchButtonLocator); }
+        return  driver.findElement(searchInputFieldLocator); }
 }
-
