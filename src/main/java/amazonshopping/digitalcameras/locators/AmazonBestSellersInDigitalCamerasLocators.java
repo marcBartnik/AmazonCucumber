@@ -21,10 +21,10 @@ public class AmazonBestSellersInDigitalCamerasLocators {
     public AmazonBestSellersInDigitalCamerasLocators(WebDriver driver){
 
         this.driver = driver;
-        fifthElement = new By.ByCssSelector("#result_5 > div > div.a-fixed-left-grid > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > div.a-row.a-spacing-none.scx-truncate-medium.sx-line-clamp-2 > a");
+        fifthElement = new By.ByXPath("//*[@id=\"result_4\"]/div/div[2]/div/div[2]/div[1]/div[1]/a");
         selectQuantityLocator = new By.ByXPath("//*[@id=\"quantity\"]/option[8]");
         addToCartButtonLocator = new By.ByXPath("//*[@id=\"add-to-cart-button\"]");
-        cartButtonLocator = new By.ByXPath("//*[@id=\"nav-cart-count\"]");
+        cartButtonLocator = new By.ByXPath("//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input");
     }
 
     /**
