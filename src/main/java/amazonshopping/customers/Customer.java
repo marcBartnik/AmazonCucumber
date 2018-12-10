@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 
-import static junit.framework.TestCase.assertEquals;
-
 /**
  * Class Customer is an Actor who will be performing actions on Amazon page.
  */
@@ -84,10 +82,13 @@ public class Customer {
     /**
      * Checking that correct products were added.
      */
-    public void checkProductsInCart() {
+    public boolean checkProductsInCart() {
 
         amazonCartPage.productsInCart();
-        assertEquals(amazonBestSellersInDigitalCameras.productUrl(), amazonCartPage.getCartProductUrl());
+        if (amazonBestSellersInDigitalCameras.productUrl() == amazonCartPage.getCartProductUrl())
+            return true;
+        else
+            return false;
     }
 
     /**
