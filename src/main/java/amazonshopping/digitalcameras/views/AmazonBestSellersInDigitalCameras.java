@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 public class AmazonBestSellersInDigitalCameras {
 
     private AmazonBestSellersInDigitalCamerasLocators amazonBestSellersInDigitalCamerasLocators;                    //here are stored all needed element for performing actions on page
+    private WebDriver driver;
 
     /**
      * Default constructor.
@@ -17,6 +18,7 @@ public class AmazonBestSellersInDigitalCameras {
      */
     public AmazonBestSellersInDigitalCameras(WebDriver driver) {
 
+        this.driver = driver;
         amazonBestSellersInDigitalCamerasLocators = new AmazonBestSellersInDigitalCamerasLocators(driver); }
 
     /**
@@ -24,7 +26,8 @@ public class AmazonBestSellersInDigitalCameras {
      */
     public void clickOn5thElement() {
 
-        amazonBestSellersInDigitalCamerasLocators.fifthElement().click(); }
+        amazonBestSellersInDigitalCamerasLocators.fifthElement().click();
+    }
 
     /**
      * Adding items to cart.
@@ -33,5 +36,19 @@ public class AmazonBestSellersInDigitalCameras {
 
         amazonBestSellersInDigitalCamerasLocators.selectQuantity().click();
         amazonBestSellersInDigitalCamerasLocators.addToCartButton().click();
+    }
+
+    /**
+     * Getting product url from search results.
+     * @return url
+     */
+    public String productUrl() {
+
+        return driver.getCurrentUrl();
+    }
+
+    public void getCart() {
+
+        amazonBestSellersInDigitalCamerasLocators.cartButton();
     }
 }

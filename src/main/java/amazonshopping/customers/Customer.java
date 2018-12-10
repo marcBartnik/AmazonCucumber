@@ -1,12 +1,13 @@
 package amazonshopping.customers;
 
-import java.io.File;
 import amazonshopping.cart.views.AmazonCartPage;
-import amazonshopping.digitalcameras.locators.AmazonBestSellersInDigitalCamerasLocators;
 import amazonshopping.digitalcameras.views.AmazonBestSellersInDigitalCameras;
 import amazonshopping.homepage.views.AmazonHomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.io.File;
+
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * Class Customer is an Actor who will be performing actions on Amazon page.
@@ -16,9 +17,7 @@ public class Customer {
 
     private WebDriver driver;
     private final String chromeDriverPath = new File("src/main/resources/chromedriver.exe").getAbsolutePath();
-
     private AmazonHomePage amazonHomePage;
-    private AmazonBestSellersInDigitalCamerasLocators amazonBestSellersInDigitalCamerasLocators;
     private AmazonBestSellersInDigitalCameras amazonBestSellersInDigitalCameras;
     private AmazonCartPage amazonCartPage;
 
@@ -34,10 +33,8 @@ public class Customer {
 
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
-
         amazonHomePage = new AmazonHomePage(driver);
         amazonBestSellersInDigitalCameras = new AmazonBestSellersInDigitalCameras(driver);
-        amazonBestSellersInDigitalCamerasLocators = new AmazonBestSellersInDigitalCamerasLocators(driver);
         amazonCartPage = new AmazonCartPage(driver);
     }
 
@@ -89,7 +86,8 @@ public class Customer {
      */
     public void checkProductsInCart() {
 
-        amazonCartPage.checkProductsInCart(amazonBestSellersInDigitalCamerasLocators);
+        amazonCartPage.productsInCart();
+        assertEquals(amazonBestSellersInDigitalCameras.productUrl(), amazonCartPage.getCartProductUrl());
     }
 
     /**
@@ -97,6 +95,8 @@ public class Customer {
      */
     public void checkSubtotalPrice() {
 
-        amazonCartPage.checkSummarizePriceForProducts();
+        amazonBestSellersInDigitalCameras.getCart();
+        amazonCartPage.getPriceForCartProduct();
+        amazonCartPage.summarizePriceForProducts();
     }
 }

@@ -1,7 +1,6 @@
 package amazonshopping.cart.views;
 
 import amazonshopping.cart.locators.AmazonCartPageLocators;
-import amazonshopping.digitalcameras.locators.AmazonBestSellersInDigitalCamerasLocators;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -19,18 +18,34 @@ public class AmazonCartPage {
     /**
      * Checking that correct product was added.
      */
-    public void checkProductsInCart(AmazonBestSellersInDigitalCamerasLocators amazonBestSellersInDigitalCamerasLocators) {
+    public void productsInCart() {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         amazonCartPageLocators.cartButton().click();
-        amazonCartPageLocators.productName().getText().equals(amazonBestSellersInDigitalCamerasLocators.productName());
+        amazonCartPageLocators.cartProductUrl().click();
     }
 
     /**
+     * Getting price for product
+     */
+    public void getPriceForCartProduct() {
+
+        amazonCartPageLocators.productPrice();
+    }
+    /**
      * Checking that correct product was added.
      */
-    public void checkSummarizePriceForProducts() {
+    public void summarizePriceForProducts() {
 
         amazonCartPageLocators.subtotalPrice().getText().equals(amazonCartPageLocators.productPrice());
+    }
+
+    /**
+     * Getting url of product from cart.
+     * @return url
+     */
+    public String getCartProductUrl() {
+
+        return driver.getCurrentUrl();
     }
 }
