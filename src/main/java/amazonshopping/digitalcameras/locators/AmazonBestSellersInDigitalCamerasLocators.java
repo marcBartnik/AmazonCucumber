@@ -24,7 +24,7 @@ public class AmazonBestSellersInDigitalCamerasLocators {
         fifthElement = new By.ByXPath("//*[@id=\"result_4\"]/div/div/div/div[2]/div[1]/div[1]/a");
         selectQuantityLocator = new By.ByXPath("//*[@id=\"quantity\"]/option[8]");
         addToCartButtonLocator = new By.ByXPath("//*[@id=\"add-to-cart-button\"]");
-        cartButtonLocator = new By.ByXPath("//*[@id=\"attach-sidesheet-view-cart-button-announce\"]");
+        cartButtonLocator = new By.ByXPath("//div[contains(@id,'view-cart')]");
     }
 
     /**

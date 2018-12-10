@@ -85,10 +85,7 @@ public class Customer {
     public boolean checkProductsInCart() {
 
         amazonCartPage.productsInCart();
-        if (amazonBestSellersInDigitalCameras.productUrl() == amazonCartPage.getCartProductUrl())
-            return true;
-        else
-            return false;
+        return amazonBestSellersInDigitalCameras.productUrl() == amazonCartPage.getCartProductUrl();
     }
 
     /**
