@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class AmazonCartPageLocators {
 
     private WebDriver driver;				    //driver which allows to navigate on a web page
-    private By cartButtonLocator;				//button which bring customer to amazonshopping.data
+    private By cartButtonLocator;				//button which brings customer to cart
     private By productPriceLocator;             //field that shows product price
     private By subtotalPriceLocator;		    //field that shows subtotal price
     private By productUrlLocator;		        //field which represents product name
@@ -18,10 +18,10 @@ public class AmazonCartPageLocators {
     public AmazonCartPageLocators(WebDriver driver){
 
         this.driver = driver;
-        cartButtonLocator = new By.ByXPath("//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input");
+        cartButtonLocator = new By.ByXPath("//*[@id=\"hlb-view-cart-announce\"]");
         productPriceLocator = new By.ByXPath("//*[@id=\"activeCartViewForm\"]/div[2]/div/div[4]/div/div[2]/p/span");
         subtotalPriceLocator = new By.ByClassName("//*[@id=\"gutterCartViewForm\"]/div[3]/div/div/div[1]/p/span/span[2]");
-        productUrlLocator = new By.ByXPath("//*[@id=\"activeCartViewForm\"]/div[1]/div[1]/div[2]/div/div/div/div[4]/div/div[1]/div/div/div[2]/ul/li[1]/span/a/span");
+        productUrlLocator = new By.ByXPath("//*[@id=\"activeCartViewForm\"]/div[2]/div/div[4]/div/div[1]/div/div/div[2]/ul/li[1]/span/a");
     }
 
     /**

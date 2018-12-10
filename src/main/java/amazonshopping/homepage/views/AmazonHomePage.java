@@ -5,6 +5,7 @@ import amazonshopping.homepage.locators.AmazonHomePageLocators;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Class provides methods for Customer to moving on a page.
@@ -49,5 +50,8 @@ public class AmazonHomePage {
     /**
      * Clicking search button.
      */
-    public void lookForDesiredProduct() { amazonHomePageLocators.searchInputField().sendKeys(Keys.RETURN); }
+    public void lookForDesiredProduct() {
+
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        amazonHomePageLocators.searchInputField().sendKeys(Keys.RETURN); }
 }
