@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 public class AmazonBestSellersInDigitalCamerasLocators {
 
     private WebDriver driver;				    //driver which allows to navigate on a web page
-    private By fifthElement;					//5th elemnt in search results
+    private By fifthElement;					//5th element in search results
     private By selectQuantityLocator;		    //field which represents requested quantity of product
     private By addToCartButtonLocator;			//button which allows adding products to cart
     private By cartButtonLocator;               //button which reaches cart button
@@ -21,10 +21,10 @@ public class AmazonBestSellersInDigitalCamerasLocators {
     public AmazonBestSellersInDigitalCamerasLocators(WebDriver driver){
 
         this.driver = driver;
-        fifthElement = new By.ByXPath("//*[@id=\"result_4\"]/div/div[2]/div/div[2]/div[1]/div[1]/a");
+        fifthElement = new By.ByXPath("//*[@id=\"result_4\"]/div/div/div/div[2]/div[1]/div[1]/a");
         selectQuantityLocator = new By.ByXPath("//*[@id=\"quantity\"]/option[8]");
         addToCartButtonLocator = new By.ByXPath("//*[@id=\"add-to-cart-button\"]");
-        cartButtonLocator = new By.ByXPath("//*[@id=\"attach-sidesheet-view-cart-button\"]/span/input");
+        cartButtonLocator = new By.ByXPath("//*[@id=\"attach-sidesheet-view-cart-button-announce\"]");
     }
 
     /**

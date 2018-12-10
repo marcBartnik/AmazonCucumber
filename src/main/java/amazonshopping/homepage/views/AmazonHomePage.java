@@ -52,6 +52,6 @@ public class AmazonHomePage {
      */
     public void lookForDesiredProduct() {
 
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         amazonHomePageLocators.searchInputField().sendKeys(Keys.RETURN); }
 }
